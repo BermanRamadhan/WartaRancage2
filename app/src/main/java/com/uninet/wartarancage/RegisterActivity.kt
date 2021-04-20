@@ -57,11 +57,12 @@ class RegisterActivity : AppCompatActivity() {
             checkfield(etEmail)
             checkfield(etPassword)
             checkfield(etcPassword)
-            if(valid ){
+            if(valid){
 //                var user : FirebaseUser = fAuth.currentUser
                 fAuth.createUserWithEmailAndPassword(email.toString(), password.toString()).addOnCompleteListener(
                         OnCompleteListener {
                             if (it.isSuccessful) {
+
                                 val firebaseUser: FirebaseUser = it.result!!.user!!
                                 Toast.makeText(this, "sip", Toast.LENGTH_SHORT).show()
                                 val intent = Intent(this, LoginActivity::class.java)
