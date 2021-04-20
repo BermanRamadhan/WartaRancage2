@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/muka"
+        android:title="Muka" />
+    <item
+        android:id="@+id/sorot"
+        android:title="Sorot" />
+    <item
+        android:id="@+id/pasar"
+        android:title="Pasar" />
+    <item
+        android:id="@+id/juara"
+        android:title="Juara" />
+    <item
+        android:id="@+id/mimbar"
+        android:title="Mimbar" />
+    <item
+        android:id="@+id/hegar"
+        android:title="Hegar" />
+    <item
+        android:id="@+id/bewara"
+        android:title="Bewara" />
+</menu>

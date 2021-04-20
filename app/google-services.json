@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "478978174178",
+    "project_id": "wartarancage",
+    "storage_bucket": "wartarancage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478978174178:android:c3ad895472be4faa21c2bb",
+        "android_client_info": {
+          "package_name": "com.uninet.wartarancage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478978174178-l1ajbvhqpa8uf6tmbn2a4al7tblarm0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrrAe4X67f3gWqdF-Oy2wuta27Wg8j8a8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478978174178-l1ajbvhqpa8uf6tmbn2a4al7tblarm0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
