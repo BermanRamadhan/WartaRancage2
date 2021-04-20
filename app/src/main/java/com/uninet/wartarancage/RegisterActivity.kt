@@ -58,8 +58,6 @@ class RegisterActivity : AppCompatActivity() {
             checkfield(etPassword)
             checkfield(etcPassword)
             if(valid ){
-                if (true){
-//
 //                var user : FirebaseUser = fAuth.currentUser
                 fAuth.createUserWithEmailAndPassword(email.toString(), password.toString()).addOnCompleteListener(
                         OnCompleteListener {
@@ -81,10 +79,7 @@ class RegisterActivity : AppCompatActivity() {
                                 Toast.makeText(this, "Failure" + it.message, Toast.LENGTH_SHORT).show()
                 })
             }
-                else{
-                    Toast.makeText(this, "confirm password is not match", Toast.LENGTH_SHORT).show()
-                }
-            }
+
 
         }
     }
