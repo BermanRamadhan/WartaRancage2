@@ -122,13 +122,12 @@
                         android:background="@color/demokrat_3"
                         android:text="Post"
                         android:textSize="18dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/editText" />
 
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
             </androidx.core.widget.NestedScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
