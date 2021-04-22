@@ -19,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class RegisterActivity : AppCompatActivity() {
     lateinit var btnreg: AppCompatButton
     lateinit var btnlogin: TextView
+    lateinit var etusername: EditText
     lateinit var etEmail: EditText
     lateinit var etPassword: EditText
     lateinit var etcPassword: EditText
@@ -42,12 +43,22 @@ class RegisterActivity : AppCompatActivity() {
         etEmail = this.findViewById(R.id.user__emailreg)
         etPassword = this.findViewById(R.id.user__passwordreg)
         etcPassword = this.findViewById(R.id.cuser__password)
+        etusername = this.findViewById(R.id.user__usernamereg)
 
 
+
+
+
+        var username = etusername.text
         var email = etEmail.text
         var password = etPassword.text
         var cpassword = etcPassword.text
 
+        var userdoc = hashMapOf(
+            "username" to username.toString(),
+            "email" to email.toString(),
+            "password" to password.toString()
+        )
 
         btnlogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
@@ -60,21 +71,33 @@ class RegisterActivity : AppCompatActivity() {
             if(valid){
 //                var user : FirebaseUser = fAuth.currentUser
                 fAuth.createUserWithEmailAndPassword(email.toString(), password.toString()).addOnCompleteListener(
-                        OnCompleteListener {
-                            if (it.isSuccessful) {
+                    OnCompleteListener {
+                        if (it.isSuccessful) {
 
-                                val firebaseUser: FirebaseUser = it.result!!.user!!
-                                Toast.makeText(this, "sip", Toast.LENGTH_SHORT).show()
-                                val intent = Intent(this, LoginActivity::class.java)
-                                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                startActivity(intent)
-                                finish()
-                            }
-                            else {
-                                Toast.makeText(this, "Failed To Register,(${it.exception!!.message!!.toString()})", Toast.LENGTH_SHORT).show()
-                            }
+                            val firebaseUser: FirebaseUser = it.result!!.user!!
+                            Toast.makeText(this, "sip", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, LoginActivity::class.java)
+                            intent.flags =
+                                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            startActivity(intent)
 
-                        })
+                            fStore.collection("users").document("p")
+                                .set(userdoc).addOnSuccessListener {
+                                    Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
+                                }.addOnFailureListener {
+                                    Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show()
+                                }
+
+                            finish()
+                        } else {
+                            Toast.makeText(
+                                this,
+                                "Failed To Register,(${it.exception!!.message!!.toString()})",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+
+                    })
                         .addOnFailureListener(
                                 OnFailureListener {
                                 Toast.makeText(this, "Failure" + it.message, Toast.LENGTH_SHORT).show()
