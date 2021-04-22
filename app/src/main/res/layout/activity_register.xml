@@ -46,6 +46,29 @@
                     app:layout_constraintVertical_bias=".1"
                     app:layout_constraintWidth_percent=".7" />
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/user__username"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/white"
+                    android:hint="Masukan Username"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wrlogo"
+                    app:layout_constraintWidth_percent=".9">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/user__usernamereg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="textEmailAddress"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/wrlogo" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/user__emailregL"
@@ -53,10 +76,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@color/white"
-                    android:hint="Masukan Email/Username"
+                    android:hint="Masukan Email"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/wrlogo"
+                    app:layout_constraintTop_toBottomOf="@+id/user__username"
                     app:layout_constraintWidth_percent=".9">
 
                     <com.google.android.material.textfield.TextInputEditText

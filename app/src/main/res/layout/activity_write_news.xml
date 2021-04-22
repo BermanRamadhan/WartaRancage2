@@ -42,7 +42,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="BeritaMu"
+                        android:text="Warta Rancage"
                         android:textColor="@color/demokrat_3"
                         android:textSize="40dp"
                         android:textStyle="bold"
@@ -95,12 +95,16 @@
                             android:id="@+id/gambar__berita"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/addpic"
+                            android:background="@color/white"
                             android:scaleType="centerInside"
+                            android:src="@drawable/addpic"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.484"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.629"
+                            app:layout_constraintWidth_percent=".9" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <EditText
