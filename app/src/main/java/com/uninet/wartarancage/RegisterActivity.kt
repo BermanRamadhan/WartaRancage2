@@ -15,6 +15,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.uninet.wartarancage.api.DataRepository
+import com.uninet.wartarancage.api.RegisterUser
+import com.uninet.wartarancage.model.UserModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var btnreg: AppCompatButton
@@ -26,10 +33,10 @@ class RegisterActivity : AppCompatActivity() {
     var valid : Boolean = false
     var TAG = "RegisterActivity"
     var a : String = "sdasda"
-
     lateinit var fAuth : FirebaseAuth
     lateinit var fStore : FirebaseFirestore
     lateinit var user : FirebaseUser
+    val apiwarta = DataRepository.create()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,9 +52,18 @@ class RegisterActivity : AppCompatActivity() {
         etcPassword = this.findViewById(R.id.cuser__password)
         etusername = this.findViewById(R.id.user__usernamereg)
 
+        apiwarta.getUser().enqueue(object : Callback<List<RegisterUser>> {
+            override fun onResponse(call: Call<List<RegisterUser>>, response: Response<List<RegisterUser>>) {
+                if (response.isSuccessful) {
+                    val data = response.body()
+                }
+            }
 
+            override fun onFailure(call: Call<List<RegisterUser>>, t: Throwable) {
+                Toast.makeText(this@RegisterActivity, t.message, Toast.LENGTH_SHORT).show()
+            }
 
-
+        })
 
         var username = etusername.text
         var email = etEmail.text

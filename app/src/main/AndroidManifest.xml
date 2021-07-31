@@ -19,7 +19,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WartaRancage"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UserNewsFeed"></activity>
+        <activity
+            android:name=".MainActivity3"
+            android:label="@string/title_activity_main3"
+            android:theme="@style/Theme.WartaRancage.NoActionBar"></activity>
+        <activity android:name=".ApprovalNews" />
+        <activity android:name=".PostApproval" />
+        <activity android:name=".UserNewsFeed" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".WriteNewsActivity" />
         <activity android:name=".MainActivity2" />

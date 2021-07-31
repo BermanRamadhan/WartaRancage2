@@ -29,6 +29,7 @@ class WriteNewsActivity : AppCompatActivity() {
 
     lateinit var currentPhotoPath: String
     lateinit var imageView: ImageView
+    val BASE_URL = "http://localhost:9000/"
 
     companion object{
         const val CREATE_FILE = 1
